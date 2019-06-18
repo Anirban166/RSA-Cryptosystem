@@ -9,6 +9,7 @@ Steps Involved in RSA (key generation):
 (1) First, we choose two distinct prime numbers, say p and q. (random primes, preferably big to score a decent level of security)
 -> Can be generated using a primality test.
 -> Fermat’s test can be used, though practically Miller Rabin’s test is more sought after.
+
 (2) n=p*q, which is the modulus of both the keys.
 (3) Then we calculate Euler’s totient, ϕ(n) = (p-1)*(q-1). 
 (4) Then we choose public key e such that e>2 and co-prime to totient i.e., gcd(e,totient) must be equal to 1.
