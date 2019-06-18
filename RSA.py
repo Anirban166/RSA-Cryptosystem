@@ -33,7 +33,7 @@ def coprimes(a):
         if x == modinv(x,phi):
             l.remove(x)
     return l
-print("Choose an e from a below coprimes array:\n")
+print("Choose an e from a coprime(s) array below:\n")
 print(str(coprimes(phi)) + "\n")
 e=int(input())
 d=modinv(e,phi)
