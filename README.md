@@ -1,5 +1,4 @@
 # RSA-Cryptosystem
-RSA Cryptosystem
 
 Introduction:
 
