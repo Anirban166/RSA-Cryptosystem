@@ -12,3 +12,5 @@ def modinv(a, m):
         raise Exception('modular inverse does not exist')
     else:
         return x % m
+
+    
