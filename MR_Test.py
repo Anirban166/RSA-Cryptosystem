@@ -94,3 +94,4 @@ print("All primes smaller than 100: ");
 for n in range(1,100): 
     if (isPrime(n, k)): 
         print(n , end=" "); 
+        
