@@ -1,13 +1,13 @@
 # RSA-Cryptosystem
 
 Introduction:
+-------
 
 RSA, as named after the surnames of three MIT professors (Rivest-Shamir-Adleman) who discovered it, is one of the first public key cryptosystems which is being widely used and accepted till date as a good encryption scheme. Here, the encryption key and decryption key are public and private respectively. 
 An RSA user creates a public key based on the product of two large prime numbers and an auxiliary exponent value which is shared, and a private key based on the public key values. The two primes are kept secret. The process and its feasibility is discussed below.
 
--------
-
 Steps Involved in RSA (key generation):
+-------
 
 (1) First, we choose two distinct prime numbers, say p and q. (random primes, preferably big to score a decent level of security)
 
@@ -35,9 +35,8 @@ Steps Involved in RSA (key generation):
 
 (7) With the help of c and d thus obtained, we decrypt the message using m=cdmodn.
 
--------
-
 Explanation:
+-------
 
 The Euler’s totient φ(n) of a positive integer n greater than 1 is defined to be the number of positive integers less than n that are coprime (only positive divisor is 1 or gcd is 1 between two numbers) to n. (φ(1) is defined to be 1)
 when n is prime, ϕ (n)=n-1, as in the case of Fermat’s theorem.
@@ -68,7 +67,9 @@ Practical Implementation:
 
 The written code works well for small primes but considering a deeper level of security, preferable prime length for the 2 primes considered (p,q) ranges to around primes of 2048 bits (211) which result in values (n) greater than 4096 bits upon their multiplication (p*q). This ensures a tight encryption which is impossible to decrypt with massive computing resources even with a large span of time allotted.
 
-Hence RSA is quite feasible, apart from its downsides like being much slower than symmetric cryptosystems. 
+Hence RSA is quite feasible, apart from its downsides like being much slower than symmetric cryptosystems.
+
+-------
 
 All of this has been credited in my paper on RSA and elliptic curve cryptography as a research intern in IITG. 
 
