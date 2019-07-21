@@ -5,6 +5,8 @@ Introduction:
 RSA, as named after the surnames of three MIT professors (Rivest-Shamir-Adleman) who discovered it, is one of the first public key cryptosystems which is being widely used and accepted till date as a good encryption scheme. Here, the encryption key and decryption key are public and private respectively. 
 An RSA user creates a public key based on the product of two large prime numbers and an auxiliary exponent value which is shared, and a private key based on the public key values. The two primes are kept secret. The process and its feasibility is discussed below.
 
+-------
+
 Steps Involved in RSA (key generation):
 
 (1) First, we choose two distinct prime numbers, say p and q. (random primes, preferably big to score a decent level of security)
@@ -33,6 +35,8 @@ Steps Involved in RSA (key generation):
 
 (7) With the help of c and d thus obtained, we decrypt the message using m=cdmodn.
 
+-------
+
 Explanation:
 
 The Euler’s totient φ(n) of a positive integer n greater than 1 is defined to be the number of positive integers less than n that are coprime (only positive divisor is 1 or gcd is 1 between two numbers) to n. (φ(1) is defined to be 1)
@@ -54,11 +58,13 @@ Each communicating entity has one public key (e,n) or private key (d,n) pair, wh
 Therefore, to decrypt a ciphertext C = Med(mod n), we only need to calculate Cd(mod n) because we know C= Me(mod n) => Cd(mod n)= Med(mod n) => Cd(mod n)=M. (since Med(mod n) = M)
 
 Viability:
+-------
 
 The RSA cryptosystem is based on the theorem which implies that the inverse of the function a->aemodn (where e is the public encryption exponent) is the function b->bdmodn, (where d is the private decryption exponent) which gives the difficulty of computing ϕ(n) without knowing the factorization of n, thus the difficulty of computing d arises too. 
 This can only be solved by factorizing n (since every number is essentially a product of primes) and only the owner of the private key knows the factorization (primes p,q whose product yields n). This ‘factoring problem’ is the security point, with more chances of the encryption to be secure for large values of n, or for large primes considered. Only n being publicly disclosed, along with the given difficulty to factor large numbers (it is computationally infeasible to factor a large value of n to get d) gives the guarantee that no one else knows the factorization and the encrypted message, thus making it viable.
 
-Practical Implementation
+Practical Implementation:
+-------
 
 The written code works well for small primes but considering a deeper level of security, preferable prime length for the 2 primes considered (p,q) ranges to around primes of 2048 bits (211) which result in values (n) greater than 4096 bits upon their multiplication (p*q). This ensures a tight encryption which is impossible to decrypt with massive computing resources even with a large span of time allotted.
 
