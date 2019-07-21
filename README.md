@@ -70,7 +70,6 @@ The written code works well for small primes but considering a deeper level of s
 Hence RSA is quite feasible, apart from its downsides like being much slower than symmetric cryptosystems.
 
 -------
-
 All of this has been credited in my paper on RSA and elliptic curve cryptography as a research intern in IITG. 
 
 
