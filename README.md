@@ -78,7 +78,7 @@ Summary Addon for quick encryption/decryption: (22/07/19)
 :lock:Encryption
 -------
 Input: RSA public key (n,e), plaintext m ∈ [0,n-1] |
-Output: Ciphertext c, (Compute c = M<sup>e</sup>(mod n), return c).
+Output: Ciphertext c, (Compute c = m<sup>e</sup>(mod n), return c).
 
 :unlock:Decryption
 -------
