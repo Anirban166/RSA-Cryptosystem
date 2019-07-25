@@ -31,7 +31,7 @@ Steps Involved in RSA (key generation):
 
 -> As e is much smaller than d, encrypting a message using RSA is much faster than decrypting it. 
 
-(6) Ciphertext is calculated using the equation c=memodn where m is the message to be encrypted.
+(6) Ciphertext is calculated using the equation c=m<sup>e</sup>modn where m is the message to be encrypted.
 
 (7) With the help of c and d thus obtained, we decrypt the message using m=c<sup>d</sup>modn.
 
@@ -43,8 +43,8 @@ when n is prime, ϕ (n)=n-1, as in the case of Fermat’s theorem.
 Plaintext and ciphertext are integers between 0 and n-1 for some n.
 
 Encryption and decryption are of the following form, for some plaintext M and ciphertext C:
-C = Me(mod n) 
-M = Cd(mod n) = (Me)d(mod n) = Med(mod n)
+C = M<sup>e</sup>(mod n) 
+M = C<sup>d</sup>(mod n) = (M<sup>e</sup>)<sup>d</sup>(mod n) = M<sup>ed</sup>(mod n)
 
 Each communicating entity has one public key (e,n) or private key (d,n) pair, where e and d are each the multiplicative inverse (modϕ(n)) of the other. 
 
@@ -52,9 +52,9 @@ Each communicating entity has one public key (e,n) or private key (d,n) pair, wh
 
 => ed = 1 + kϕ(n), for some k.
 
-=> Med(mod n) =M 1 + kϕ(n) (mod n) = M1 x (M ϕ(n))k (mod ϕ(n)) = M1 x 1k (mod n) = M. (Euler’s theorem)
+=> M<sup>ed</sup>(mod n) =M<sup>1 + kϕ(n)</sup>(mod n) = M<sup>1</sup> x (M <sup>ϕ(n)</sup>)<sup>k</sup>(mod ϕ(n)) = M<sup>1</sup> x 1<sup>k</sup>(mod n) = M. (Euler’s theorem)
 
-Therefore, to decrypt a ciphertext C = Med(mod n), we only need to calculate Cd(mod n) because we know C= Me(mod n) => Cd(mod n)= Med(mod n) => Cd(mod n)=M. (since Med(mod n) = M)
+Therefore, to decrypt a ciphertext C = M<sup>ed</sup>(mod n), we only need to calculate C<sup>d</sup>(mod n) because we know C= M<sup>e</sup>(mod n) => C<sup>d</sup>(mod n)= M<sup>ed</sup>(mod n) => C<sup>d</sup>(mod n)=M. (since M<sup>ed</sup>(mod n) = M)
 
 Viability:
 -------
