@@ -33,7 +33,7 @@ Steps Involved in RSA (key generation):
 
 (6) Ciphertext is calculated using the equation c=memodn where m is the message to be encrypted.
 
-(7) With the help of c and d thus obtained, we decrypt the message using m=cdmodn.
+(7) With the help of c and d thus obtained, we decrypt the message using m=c<sup>d</sup>modn.
 
 Explanation:
 -------
