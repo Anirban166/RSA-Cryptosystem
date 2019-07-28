@@ -1,6 +1,10 @@
-A Suitable Textbook to go through basic Number Theory - (such as Euler's theorem, modular arithmetic, )
+A Suitable Textbook to go through basic Number Theory - (such as Euler's theorem, modular arithmetic etc.)
 Elemental Number Theory - David M. Burton
 
-Elliptic Curves / Google Drive links -
-(1) Undergraduate texts in Mathematics - Joseph H.Silverman and John T.Tate
+Google Drive links:
+
+Elliptic Curves -
+Undergraduate texts in Mathematics - Joseph H.Silverman and John T.Tate
 https://drive.google.com/open?id=1ZCEDHLhm8_xT--55BP6zKLHRqeOZ3-0M
+
+
