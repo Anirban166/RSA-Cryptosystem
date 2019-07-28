@@ -8,3 +8,7 @@ Drive link - https://drive.google.com/open?id=1ZCEDHLhm8_xT--55BP6zKLHRqeOZ3-0M
 ECs + Algebra:
 Contemporary Abstract Algebra - Joseph A.Gallian
 Drive link - https://drive.google.com/open?id=1JuN5hO0B_r60GU9aFPe5pn2rlHb9EmX5
+
+ECs + Cryptography:
+Guide to Elliptic Curve Cryptography - Darrel Hankerson
+Drive link - https://drive.google.com/open?id=1agXKBKGsoh4ysAbE-zJ3Sv-OVE7Aq6oY
