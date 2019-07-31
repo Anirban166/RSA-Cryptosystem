@@ -1,10 +1,8 @@
 # RSA-Cryptosystem
 
-Introduction:
--------
+Note: All of this is a part of my summer internship report under the guidance of Professor Anupam Saikia Sir from IITG Maths Department.
 
-RSA, as named after the surnames of three MIT professors (Rivest-Shamir-Adleman) who discovered it, is one of the first public key cryptosystems which is being widely used and accepted till date as a good encryption scheme. Here, the encryption key and decryption key are public and private respectively. 
-An RSA user creates a public key based on the product of two large prime numbers and an auxiliary exponent value which is shared, and a private key based on the public key values. The two primes are kept secret. The process and its feasibility is discussed below.
+-------
 
 Steps Involved in RSA (key generation):
 -------
@@ -70,10 +68,7 @@ The written code works well for small primes but considering a deeper level of s
 Hence RSA is quite feasible, apart from its downsides like being much slower than symmetric cryptosystems.
 
 -------
-All of this has been credited on my paper on cryptography produced as a research intern in IITG.
-
--------
-Summary Addon for quick encryption/decryption: (22/07/19)
+Summary Addon for quick encryption/decryption: (22/06/19)
 
 :lock:Encryption
 -------
