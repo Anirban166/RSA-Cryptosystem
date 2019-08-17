@@ -83,7 +83,7 @@ curves = {
         a=0x6127c24c05f38a0aaaf65c0ef02c,
         b=0x51def1815db5ed74fcc34c85d709,
     ),
-    'secp128r1': EllipticCurve(
+    'secp128r1': EllipticCurve( 
         seed=0x000e0d4d696e6768756151750cc03a4473d03679,
         p=0xfffffffdffffffffffffffffffffffff,
         a=0xfffffffdfffffffffffffffffffffffc,
