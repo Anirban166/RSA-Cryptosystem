@@ -35,7 +35,7 @@ def miillerTest(d, n):
     # Corner cases make sure that n > 4 
     a = 2 + random.randint(1, n - 4); 
   
-    # Compute a^d % n 
+    # Compute a^d % n  
     x = power(a, d, n); 
   
     if (x == 1 or x == n - 1): 
