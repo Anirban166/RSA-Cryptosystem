@@ -1,16 +1,10 @@
-#!/usr/bin/env python3
-
 import collections
 import hashlib
 
-
 class VerificationFailed(Exception):
-
     pass
 
-
 EllipticCurve = collections.namedtuple('EllipticCurve', 'seed p a b')
-
 
 # All the following curves except the last one were taken from the OpenSSL
 # source code (crypto/ec/ec_curve.c). The last four are fake curves that should
