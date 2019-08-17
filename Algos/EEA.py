@@ -3,7 +3,7 @@ def extended_euclidean_algorithm(a, b):
     Returns a three-tuple (gcd, x, y) such that
     a * x + b * y == gcd, where gcd is the greatest
     common divisor of a and b.
-
+ 
     This function implements the extended Euclidean
     algorithm and runs in O(log b) in the worst case.
     """
