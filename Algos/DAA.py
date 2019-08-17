@@ -23,3 +23,4 @@ def double_and_add(n, x):
         addend *= 2
 
     return result
+ 
