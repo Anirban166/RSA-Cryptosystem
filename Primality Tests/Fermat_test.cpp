@@ -1,7 +1,7 @@
 (1) Fermat's primality test - (compiled in GNU GCC, IDE: Dev C++) 
 (1.a) Recursive function to calculate greatest common divisor among two numbers (x,y) -
 int gcd (int x, int y) 
-{ 
+{  
     if (x < y) 
         return gcd (y, x); 
     else if (x%y == 0) 
