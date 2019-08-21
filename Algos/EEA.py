@@ -1,5 +1,5 @@
 def extended_euclidean_algorithm(a, b):
-    """
+    """ 
     Returns a three-tuple (gcd, x, y) such that
     a * x + b * y == gcd, where gcd is the greatest
     common divisor of a and b.
