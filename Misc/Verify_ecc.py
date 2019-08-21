@@ -2,7 +2,7 @@ import collections
 import hashlib
 
 class VerificationFailed(Exception):
-    pass
+    pass 
 
 EllipticCurve = collections.namedtuple('EllipticCurve', 'seed p a b')
 
