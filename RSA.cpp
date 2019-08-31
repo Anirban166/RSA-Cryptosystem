@@ -3,10 +3,16 @@
 #include<string.h>
 #include<stdlib.h>
 using namespace std;
+
 long int p, q, n, t, flag, e[100], d[100], temp[100], j, m[100], en[100], i;
-char msg[100]; int prime(long int); void ce(); long int cd(long int);
+char msg[100]; 
+
+int prime(long int); 
+void ce(); 
+long int cd(long int);
 void encrypt();
 void decrypt();
+
 int prime (long int pr) // Basic prime check function
 {   int i;
     j = sqrt(pr);
