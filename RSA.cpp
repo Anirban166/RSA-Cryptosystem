@@ -4,9 +4,11 @@
 #include<stdlib.h>
 using namespace std;
 
+//Variables:
 long int p, q, n, t, flag, e[100], d[100], temp[100], j, m[100], en[100], i;
 char msg[100]; 
 
+//Functions:
 int prime(long int); 
 void ce(); 
 long int cd(long int);
@@ -52,7 +54,7 @@ long int cd (long int x) // Calculating private exponent d
     {
         k = k + t;
         if (k % x == 0)
-            return (k / x);
+        return (k / x);
     }
 }
 void encrypt () // Encryption function
@@ -76,7 +78,7 @@ void encrypt () // Encryption function
         i++;
     }
     en[i] = -1;
-    cout << "\n Encrypted Message :\n";
+    cout << "Encrypted Message :\n";
     for (i = 0; en[i] != -1; i++)
         printf("%c", en[i]);
 }
@@ -98,29 +100,30 @@ void decrypt () // Decryption function
         i++;
     }
     m[i] = -1;
-    cout << "\n Decrypted Message :\n";
+    cout << "Decrypted Message :\n";
     for (i = 0; m[i] != -1; i++)
         printf("%c", m[i]);
 }
+ 
 int main()
 {
-    cout << "\n Enter a prime :\n";
+    cout << "Enter a prime :\n";
     cin >> p;
     flag = prime(p);
     if (flag  ==  0)
     {
-        cout << "\n Wrong input\n";
+        cout << "Wrong input\n";
         exit(1);
     }
-    cout << "\n Enter another prime :\n";
+    cout << "Enter another prime :\n";
     cin >> q;
     flag = prime(q);
     if (flag  ==  0  ||  p  ==  q)
     {
-        cout << "\n Wrong input\n";
+        cout << "Wrong input\n";
         exit(1);
     }
-    cout << "\n Enter message for encryption :\n";
+    cout << "Enter message for encryption :\n";
     fflush(stdin);
     cin >> msg;
     for (i = 0; msg[i] != '\0'; i++)
@@ -128,7 +131,7 @@ int main()
     n = p * q;
     t = (p - 1) * (q - 1);
     ce();
-    cout << "\n possible values of e,d are :\n";
+    cout << "Possible values of e,d are :\n";
     for (i = 0; i < j - 1; i++)
         cout << e[i] << "\t" << d[i] << "\n";
     encrypt();
