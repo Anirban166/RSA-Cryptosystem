@@ -8,7 +8,8 @@ l p, q, n, t, flag, e[100], d[100], temp[100], j, m[100], en[100], i;
 char msg[100];
 //Note: Using vectors instead of static arrays is a better choice, which 
 //I wasn't aware of initially and might require some additional functions
-//to help you get started with, one of which is included in my header. (using size_as_int instead of container_size)
+//to help you get started with, one of which is included in my header. 
+//Syntax? convert e[100] to vector<long int>e(100) and so on.
 
 //Functions:
 int prime(l); //prime-check
@@ -21,7 +22,7 @@ int primecheck(l pr) // Basic prime check function
 {
 	int i;
 	j = sqrt(pr);
-	for (i = 2; i <= j; i++)
+	for (i = 2; i <= j; ++i)
 	{
 		if (pr % i == 0)
 			return 0;
@@ -56,7 +57,7 @@ void ce() // Calculating public exponent e
 	l cd(l x) // Calculating private exponent d
 	{
 		long int k = 1;
-		while (1)
+		while (2==2)
 		{
 			k = k + t;
 			if (k % x == 0)
