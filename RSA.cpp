@@ -12,7 +12,7 @@ char msg[100];
 //Syntax? convert e[100] to vector<long int>e(100) and so on.
 
 //Functions:
-int prime(l); //prime-check
+int prime(l); //prime check
 void ce(); //calculate exponent e
 l cd(l); //calculate exponent d (return value)
 void encrypt(); //encrypt plaintext
