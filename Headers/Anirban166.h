@@ -19,7 +19,7 @@
 // When using int loop indexes, use size_as_int(container) instead of
 // container.size() in order to document the inherent assumption that 
 // the size of the container can be represented by an int. 
-// (otherwise unsigned integer conversion error will occur.)
+// (otherwise unsigned integer conversion error will occur.) 
 
 template <typename ContainerType>
 long int size_as_int(const ContainerType &c)
@@ -33,4 +33,4 @@ long int size_as_int(const ContainerType &c)
 
 //Other code/functions exist in my header primarily for CP-contests but the above function 
 //is enough to replace them static arrays with vector ones (in case you want), as only the
-//size while taken as long integer might be a bother. Cheers! 
+//size while taken as long integer might be a bother due to the unsigned integer conversion rule. Cheers! 
