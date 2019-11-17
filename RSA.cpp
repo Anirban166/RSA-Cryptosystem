@@ -1,4 +1,4 @@
-#include"Anirban166.h" //Generic header inclusive of all headers.
+#include"Anirban166.h" //Generic header inclusive of all headers
 //iostream, math.h/cmath, string.h/cstring and stdlib.h/cstdlib used here.
 using l = long int;
 using namespace std;
@@ -7,8 +7,7 @@ using namespace std;
 l p, q, n, t, flag, e[100], d[100], temp[100], j, m[100], en[100], i;
 char msg[100];
 //Note: Using vectors instead of static arrays is a better choice, which 
-//I wasn't aware of initially and might require some additional functions
-//to help you get started with, one of which is included in my header. 
+//I wasn't aware of initially and will require some changes in the code.
 //Syntax? convert e[100] to vector<long int>e(100) and so on.
 
 //Functions:
@@ -18,22 +17,18 @@ l cd(l); //calculate exponent d (return value)
 void encrypt(); //encrypt plaintext
 void decrypt(); //decrypt ciphertext
 
-int primecheck(l pr) // Basic prime check function
+int primecheck(l var) // Basic prime check function, can be bool as well.(returns 0/1)
 {
-	int i;
-	j = sqrt(pr);
+	int i,j = sqrt(var);
 	for (i = 2; i <= j; ++i)
-	{
-		if (pr % i == 0)
+		if (var % i == 0)
 			return 0;
-	}
 	return 1;
 }
 
 void ce() // Calculating public exponent e
 {
-	int k;
-	k = 0;
+	int k = 0;
 	for (i = 2; i < t; i++)
 	{
 		if (t % i == 0)
