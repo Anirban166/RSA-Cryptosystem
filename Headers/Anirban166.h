@@ -10,11 +10,21 @@
 #include<cstdlib>
 #include<cassert>
 #include<cstddef>
+#include<iomanip>
 #include<iterator>
 #include<iostream>
 #include<algorithm>
 #include<unordered_map>
 #include<unordered_set>
+
+#define pb push_back
+#define sz(x) int((x).size())
+#define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL)
+
+typedef long long ll;
+typedef long double ld;
+typedef pair <int, int> pii;
+typedef pair <ll, ll> pll;
 
 // When using int loop indexes, use size_as_int(container) instead of
 // container.size() in order to document the inherent assumption that 
@@ -31,6 +41,4 @@ long int size_as_int(const ContainerType &c)
 //I used long int in my code but you can switch to long long int (might become slow) for overflows 
 //while dealing with big numbers, especially for larger value primes or reduce them by modular division.
 
-//Other code/functions exist in my header primarily for CP-contests but the above function 
-//is enough to replace them static arrays with vector ones (in case you want), as only the
-//size while taken as long integer might be a bother due to the unsigned integer conversion rule. Cheers! 
+//Note: Other code/functions exist in my header primarily for CP-contests.
