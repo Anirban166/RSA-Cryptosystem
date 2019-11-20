@@ -1,6 +1,6 @@
 # RSA-Cryptosystem
 
-Note: This is a part of my summer internship report under the guidance of Professor Anupam Saikia Sir from IITG Maths Department.
+Note: This is a part of my internship report under the guidance of Professor Anupam Saikia from IITG Maths Department.
 
 -------
 
