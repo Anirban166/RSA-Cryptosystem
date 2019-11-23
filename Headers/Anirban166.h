@@ -19,7 +19,7 @@
 
 #define pb push_back
 #define sz(x) int((x).size())
-#define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
 
 typedef long long ll;
 typedef long double ld;
