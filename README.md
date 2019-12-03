@@ -81,16 +81,16 @@ Input: RSA public key (n,e), RSA private key d, ciphertext c |
 Output: Plaintext m,  (Compute m = c<sup>d</sup>(mod n), return m). 
 
 -------
-Setting up SSH using RSA keys for Github: (03/12/19) <br>
+Setting up SSH using RSA keys for Github: (03/08/19) <br>
 
 For SSH authentication, it is rather typical that the users provision the key pair for themselves. Using the SSH protocol, one can connect and authenticate to remote servers and services. With SSH keys, one can connect to GitHub without supplying username or password at each visit. For setting up SSH locally within your system using RSA keys, follow along:
 
-First check if files (~/.ssh/)id_rsa and (~/.ssh/)id_rsa.pub exist in your system.
+First check if files (/.ssh/)id_rsa and (/.ssh/)id_rsa.pub exist in your system.
 If not, one can create such public/private keys by opening a terminal and typing:
 ```
 $ ssh-keygen -t rsa -C "your_email@example.com"
 ```
-We will require to copy our public key (the contents of freshly created 'id_rsa.pub') into our clipboard. To follow on a Mac, in the terminal/shell, type:
+Next we require to copy our public key (the contents of freshly created 'id_rsa.pub') into our clipboard. To follow on a Mac, in the terminal/shell, type:
 ```
 $ pbcopy < ~/.ssh/id_rsa.pub
 ```
