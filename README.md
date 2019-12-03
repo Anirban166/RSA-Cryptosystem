@@ -85,7 +85,7 @@ Setting up SSH using RSA keys for Github: (03/08/19) <br>
 
 For SSH authentication, it is rather typical that the users provision the key pair for themselves. Using the SSH protocol, one can connect and authenticate to remote servers and services. With SSH keys, one can connect to GitHub without supplying username or password at each visit. For setting up SSH locally within your system using RSA keys, follow along:
 
-First check if files (/.ssh/)id_rsa and (/.ssh/)id_rsa.pub exist in your system.
+First check if files '(/.ssh/)id_rsa' and '(/.ssh/)id_rsa.pub' exist in your system.
 If not, one can create such public/private keys by opening a terminal and typing:
 ```
 $ ssh-keygen -t rsa -C "your_email@example.com"
@@ -99,4 +99,4 @@ Then from settings click “SSH Keys” on the left and then click “Add SSH Ke
 ```
 $ ssh -T git@github.com
 ```
-If it says 'You've successfully authenticated' in the follow-up message, your good to go!
+If 'You've successfully authenticated' is included in the follow-up message, your good to go!
