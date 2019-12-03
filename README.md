@@ -1,4 +1,4 @@
-# RSA-Cryptosystem
+# RSA Cryptosystem
 
 Note: This is a part of my internship report under the guidance of Professor Anupam Saikia from IITG Maths Department.
 
@@ -79,3 +79,25 @@ Output: Ciphertext c, (Compute c = m<sup>e</sup>(mod n), return c).
 -------
 Input: RSA public key (n,e), RSA private key d, ciphertext c |
 Output: Plaintext m,  (Compute m = c<sup>d</sup>(mod n), return m). 
+
+-------
+Setting up SSH using RSA keys for Github: (03/12/19) <br>
+
+For SSH authentication, it is rather typical that the users provision the key pair for themselves. Using the SSH protocol, one can connect and authenticate to remote servers and services. With SSH keys, one can connect to GitHub without supplying username or password at each visit. For setting up SSH locally within your system using RSA keys, follow along:
+
+First check if files '~/.ssh/id_rsa' and '~/.ssh/id_rsa.pub' exist in your system.
+If not, one can create such public/private keys by opening a terminal and typing:
+```
+$ ssh-keygen -t rsa -C "your_email@example.com"
+```
+We will require to copy our public key (the contents of freshly created 'id_rsa.pub') into our clipboard. To follow on a Mac, in the terminal/shell, type:
+```
+$ pbcopy < ~/.ssh/id_rsa.pub
+```
+Paste the obtained SSH public key into your github account settings. <br>
+Then from settings click “SSH Keys” on the left and then click “Add SSH Key” on the right. Add a label (like “My System”) and paste the public key into the text box. <br>
+In a terminal/shell, type the following to test it:
+```
+$ ssh -T git@github.com
+```
+If it says 'You've successfully authenticated' in the follow-up message, your good to go!
