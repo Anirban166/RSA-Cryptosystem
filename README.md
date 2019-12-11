@@ -99,4 +99,4 @@ Then from settings click “SSH Keys” on the left and then click “Add SSH Ke
 ```
 $ ssh -T git@github.com
 ```
-If 'You've successfully authenticated' is included in the follow-up message, your good to go!
+If 'You've successfully authenticated' is included in the follow-up message, you're good to go!
