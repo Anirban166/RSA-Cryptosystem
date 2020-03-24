@@ -9,9 +9,9 @@ Steps Involved in RSA (key generation):
 
 (1) First, we choose two distinct prime numbers, say p and q. (random primes, preferably big to score a decent level of security)
 
--> Can be generated using a primality test.
+- Can be generated using a primality test.
 
--> Fermat’s test can be used, though practically Miller Rabin’s test is more sought after.
+- Fermat’s test can be used, though practically Miller Rabin’s test is more sought after.
 
 (2) n=p*q, which is the modulus of both the keys.
 
@@ -19,15 +19,15 @@ Steps Involved in RSA (key generation):
 
 (4) Then we choose public key e such that e>2 and co-prime to totient i.e., gcd(e,totient) must be equal to 1.
 
--> In most cases e is a small number. 
+- In most cases e is a small number. 
 
 (5) Then we choose private key d such that it satisfies the equation or e*d mod ϕ(n)=1. 
 
--> d is the multiplicative inverse of e modϕ(n).
+- d is the multiplicative inverse of e modϕ(n).
 
--> Public key comprises of (e,n) and private key comprises of (d).
+- Public key comprises of (e,n) and private key comprises of (d).
 
--> As e is much smaller than d, encrypting a message using RSA is much faster than decrypting it. 
+- As e is much smaller than d, encrypting a message using RSA is much faster than decrypting it. 
 
 (6) Ciphertext is calculated using the equation c=m<sup>e</sup>modn where m is the message to be encrypted.
 
