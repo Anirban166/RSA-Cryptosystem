@@ -3,10 +3,18 @@
 #include <cstring>
 #include <cstdlib>
 using l = long long int;
+#define S 100
 
-// Variables:
-l p, q, n, t, flag, e[100], d[100], temp[100], j, m[100], en[100], i;
-char msg[100];
+// Variables are passed globally.
+l p, q,      // primes
+  n,         // n = pq
+  t,         // toutient
+  flag,      // 1/0
+  e[S],    // public exponent e
+  d[S],    // private exponent d
+  temp[S], m[S], en[S];
+
+char msg[S];
 
 // Functions:
 bool primecheck(l); // Check if(prime)
@@ -27,7 +35,7 @@ bool primecheck(l var)
 void ce()
 {
 	int k = 0;
-	for (i = 2; i < t; i++)
+	for (int i = 2; i < t; i++)
 	{
 		if (t % i == 0)
 			continue;
@@ -41,7 +49,7 @@ void ce()
 				d[k] = flag;
 				k++;
 			}
-			if (k == 99)
+			if (k == 99) // (S-1)
 				break;
 		}
 	}
@@ -50,7 +58,7 @@ void ce()
 l cd(l x) 
 {
 	long int k = 1;
-	while (2==2)
+	while (true)
 	{
 		k = k + t;
 		if (k % x == 0)
@@ -61,14 +69,14 @@ l cd(l x)
 void encrypt()
 {
 	l pt, ct, key = e[0], k, len;
-	i = 0;
+	int i = 0;
 	len = strlen(msg);
 	while (i != len)
 	{
 		pt = m[i];
 		pt = pt - 96;
 		k = 1;
-		for (j = 0; j < key; j++)
+		for (int j = 0; j < key; j++)
 		{
 			k = k * pt;
 			k = k % n;
@@ -87,12 +95,12 @@ void encrypt()
 void decrypt() 
 {
 	l pt, ct, key = d[0], k;
-	i = 0;
+	int i = 0;
 	while (en[i] != -1)
 	{
 		ct = temp[i];
 		k = 1;
-		for (j = 0; j < key; j++)
+		for (int j = 0; j < key; j++)
 		{
 			k = k * ct;
 			k = k % n;
@@ -103,39 +111,29 @@ void decrypt()
 	}
 	m[i] = -1;
 	std::cout << "Decrypted Message :\n";
-	for (i = 0; m[i] != -1; i++)
+	for (int i = 0; m[i] != -1; i++)
 		printf("%c", m[i]);
 }
 
 int main()
 {   
-	std::cout << "Enter two primes (p,q for Euler's totient to be taken as (p-1)(q-1)) :\n";
-	std::cin >> p;
-	flag = primecheck(p);
-	if (flag == 0)
-	{
-		std::cout << "Wrong input!\n";
-		exit(1);
-	}
-	std::cout << "Enter another prime :\n";
-	std::cin >> q;
-	flag = primecheck(q);
-	if (flag == 0 || p == q)
-	{
-		std::cout << "Wrong input!\n";
-		exit(1);
-	}
+    do 
+    {
+	   std::cout << "Enter two primes (p,q for Euler's totient to be taken as (p-1)(q-1)) :\n";
+	   std::cin >> p >> q;
+	   if(primecheck(p) && primecheck(q)) break;
+	   else std::cout << "Wrong input; enter again (-_-)\n";
+    } while(1);    
+
 	std::cout << "Enter message for encryption :\n";
 	fflush(stdin);
 	std::cin >> msg;
-	for (i = 0; msg[i] != '\0'; i++)
+	for (int i = 0; msg[i] != '\0'; i++)
 		m[i] = msg[i];
+		
 	n = p * q;
 	t = (p - 1) * (q - 1); // Calcualting Euler's totient.
 	ce();
-	std::cout << "Possible values of exponents 'e' and 'd' are :\n";
-	for (i = 0; i < j - 1; i++)
-		std::cout << e[i] << "\t" << d[i] << "\n";
 	encrypt();
 	decrypt();
 	return 0;
