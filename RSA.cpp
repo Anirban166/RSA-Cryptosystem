@@ -34,36 +34,34 @@ bool primecheck(l var)
 
 void ce()
 {
-	int k = 0;
-	for (int i = 2; i < t; i++)
-	{
-		if (t % i == 0)
-			continue;
-		flag = primecheck(i);
-		if (flag == 1 && i != p && i != q)
-		{
-			e[k] = i;
-			flag = cd(e[k]);
-			if (flag > 0)
-			{
-				d[k] = flag;
-				k++;
-			}
-			if (k == 99) // (S-1)
-				break;
-		}
-	}
+     int k = 0;
+     for (int i = 2; i < t; i++)
+     {
+	 if (t % i == 0) continue;
+	 flag = primecheck(i);
+	 if (flag == 1 && i != p && i != q)
+	 {
+	     e[k] = i;
+	     flag = cd(e[k]);
+	     if (flag > 0)
+	     {
+		d[k] = flag;
+		k++;
+	     }
+	     if (k == 99) // (S-1)
+	     break;
+	 }
+     }
 }
 
 l cd(l x) 
 {
-	long int k = 1;
-	while (true)
-	{
-		k = k + t;
-		if (k % x == 0)
-			return (k / x);
-	}
+     long int k = 1;
+     while (true)
+     {
+	 k += t;
+	 if (k % x == 0) return (k / x);
+     }
 }
 
 void encrypt()
@@ -78,8 +76,8 @@ void encrypt()
 		k = 1;
 		for (int j = 0; j < key; j++)
 		{
-			k = k * pt;
-			k = k % n;
+			k *= pt;
+			k %= n;
 		}
 		temp[i] = k;
 		ct = k + 96;
@@ -87,7 +85,7 @@ void encrypt()
 		i++;
 	}
 	en[i] = -1;
-	std::cout << "Encrypted Message :\n";
+	std::cout << "Encrypted message :\n";
 	for (i = 0; en[i] != -1; i++)
 		printf("%c", en[i]);
 }
@@ -102,15 +100,15 @@ void decrypt()
 		k = 1;
 		for (int j = 0; j < key; j++)
 		{
-			k = k * ct;
-			k = k % n;
+			k *= ct;
+			k %= n;
 		}
 		pt = k + 96;
 		m[i] = pt;
 		i++;
 	}
 	m[i] = -1;
-	std::cout << "Decrypted Message :\n";
+	std::cout << "Decrypted message :\n";
 	for (int i = 0; m[i] != -1; i++)
 		printf("%c", m[i]);
 }
