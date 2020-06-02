@@ -2,8 +2,9 @@
 <img src = "Misc/RSA_logo.png" >
 </p>
 
-## Steps Involved
--------
+---
+Steps
+---
 
 - First select two distinct prime numbers, say p and q. (random primes, preferably big to score a decent level of security)
 
