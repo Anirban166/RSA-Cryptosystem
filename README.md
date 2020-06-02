@@ -1,39 +1,34 @@
-# RSA Cryptosystem
+<p align = "center">
+<img src = "Misc/RSA_logo.png" >
+</p>
 
-Note: This is a part of my internship report under the guidance of Professor Anupam Saikia from IITG Maths Department.
-
+## Steps Involved
 -------
 
-Steps Involved in RSA (key generation):
--------
+- First select two distinct prime numbers, say p and q. (random primes, preferably big to score a decent level of security)
 
-(1) First, we choose two distinct prime numbers, say p and q. (random primes, preferably big to score a decent level of security)
+> Can be generated using a primality test. <br>
+> Fermat’s test can be used, although practically Miller Rabin’s test is more sought after.
 
-- Can be generated using a primality test.
+- Take the product i.e. n=p*q, which is the *modulus* of both the keys.
 
-- Fermat’s test can be used, though practically Miller Rabin’s test is more sought after.
+- Then calculate the Euler’s totient, given by ϕ(n) = (p-1)*(q-1). 
 
-(2) n=p*q, which is the modulus of both the keys.
+- Proceed by choosing public key e such that e>2 and coprime to totient i.e., gcd(e,totient) must be equal to 1.
 
-(3) Then we calculate Euler’s totient, ϕ(n) = (p-1)*(q-1). 
+> In most cases e is a small number. 
 
-(4) Then we choose public key e such that e>2 and co-prime to totient i.e., gcd(e,totient) must be equal to 1.
+- Choose a corresponding private key d such that it satisfies the equation or e*d mod ϕ(n)=1. 
 
-- In most cases e is a small number. 
+> d is the multiplicative inverse of e modϕ(n). <br>
+> Public key comprises of (e,n) and private key comprises of (d). <br>
+> As e is much smaller than d, encrypting a message using RSA is much faster than decrypting it. 
 
-(5) Then we choose private key d such that it satisfies the equation or e*d mod ϕ(n)=1. 
+- Ciphertext is calculated using the equation c=m<sup>e</sup>modn where m is the message to be encrypted.
 
-- d is the multiplicative inverse of e modϕ(n).
+- With the help of c and d thus obtained, we can decrypt the message using m=c<sup>d</sup>modn.
 
-- Public key comprises of (e,n) and private key comprises of (d).
-
-- As e is much smaller than d, encrypting a message using RSA is much faster than decrypting it. 
-
-(6) Ciphertext is calculated using the equation c=m<sup>e</sup>modn where m is the message to be encrypted.
-
-(7) With the help of c and d thus obtained, we decrypt the message using m=c<sup>d</sup>modn.
-
-Explanation:
+Explanation
 -------
 
 The Euler’s totient φ(n) of a positive integer n greater than 1 is defined to be the number of positive integers less than n that are coprime (only positive divisor is 1 or gcd is 1 between two numbers) to n. (φ(1) is defined to be 1)
@@ -54,13 +49,13 @@ Each communicating entity has one public key (e,n) or private key (d,n) pair, wh
 
 Therefore, to decrypt a ciphertext C = M<sup>ed</sup>(mod n), we only need to calculate C<sup>d</sup>(mod n) because we know C= M<sup>e</sup>(mod n) => C<sup>d</sup>(mod n)= M<sup>ed</sup>(mod n) => C<sup>d</sup>(mod n)=M. (since M<sup>ed</sup>(mod n) = M)
 
-Viability:
+Viability
 -------
 
 The RSA cryptosystem is based on the theorem which implies that the inverse of the function a->a<sup>e</sup>modn (where e is the public encryption exponent) is the function b->b<sup>d</sup>modn, (where d is the private decryption exponent) which gives the difficulty of computing ϕ(n) without knowing the factorization of n, thus the difficulty of computing d arises too. 
 This can only be solved by factorizing n (since every number is essentially a product of primes) and only the owner of the private key knows the factorization (primes p,q whose product yields n). This ‘factoring problem’ is the security point, with more chances of the encryption to be secure for large values of n, or for large primes considered. Only n being publicly disclosed, along with the given difficulty to factor large numbers (it is computationally infeasible to factor a large value of n to get d) gives the guarantee that no one else knows the factorization and the encrypted message, thus making it viable.
 
-Practical Implementation:
+Practical Implementation
 -------
 
 The written code works well for small primes but considering a deeper level of security, preferable prime length for the 2 primes considered (p,q) ranges to around primes of 2048 bits which result in values (n) greater than 4096 bits upon their multiplication (p*q). This ensures a tight encryption which is impossible to decrypt with massive computing resources even with a large span of time allotted.
@@ -68,7 +63,7 @@ The written code works well for small primes but considering a deeper level of s
 Hence RSA is quite feasible, apart from its downsides like being much slower than symmetric cryptosystems.
 
 -------
-Summary Addon for quick encryption/decryption: (22/06/19)
+Summary addon for encryption/decryption: (22/06/19)
 
 :lock:Encryption
 -------
