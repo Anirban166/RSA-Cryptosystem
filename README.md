@@ -1,5 +1,6 @@
 <p align = "center">
-<img src = "Misc/RSA_logo.png" >
+<img src = "Misc/RSA_logo.png"> <br>
+<a href="#steps">Steps</a> • <a href="#explanation">Explanation</a> • <a href="#viability">Viability</a> • <a href="#practical-implementation">Practical Implementation</a> • <a href="#lockencryption">Encryption</a> • <a href="#unlockdecryption">Decryption</a>  
 </p>
 
 ---
@@ -16,8 +17,6 @@ Steps
 - Then calculate the Euler’s totient, given by ϕ(n) = (p-1)*(q-1). 
 
 - Proceed by choosing public key e such that e>2 and coprime to totient i.e., gcd(e,totient) must be equal to 1.
-
-> In most cases e is a small number. 
 
 - Choose a corresponding private key d such that it satisfies the equation or e*d mod ϕ(n)=1. 
 
