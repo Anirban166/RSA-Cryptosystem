@@ -58,9 +58,10 @@ This can only be solved by factorizing n (since every number is essentially a pr
 Practical Implementation
 -------
 
-The written code works well for small primes but considering a deeper level of security, preferable prime length for the 2 primes considered (p,q) ranges to around primes of 2048 bits which result in values (n) greater than 4096 bits upon their multiplication (p*q). This ensures a tight encryption which is impossible to decrypt with massive computing resources even with a large span of time allotted.
+The written code works well for small primes but considering a deeper level of security, preferable prime length for the 2 primes considered (p,q) ranges to around primes of 2048 bits which result in values (n) greater than 4096 bits upon their multiplication (p*q). This ensures a tight encryption which is seemingly impossible to decrypt (although completely possible to breach every combination if we were to leverage the power of supercomputers) with massive computing resources even with a large span of time allotted.
 
-Hence RSA is quite feasible, apart from its downsides like being much slower than symmetric cryptosystems.
+Hence RSA is quite feasible in general, apart from its downsides like being much slower than symmetric cryptosystems. <br>
+There are better alternatives and encryption schemes such as elliptic curve cryptography, but then again - Quantum computing could overcome that as well. Eventually nothing seems that secure, or has a counter-measure in the long run.
 
 -------
 Summary addon for encryption/decryption: (22/06/19)
