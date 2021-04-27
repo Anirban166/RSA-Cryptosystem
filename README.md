@@ -1,5 +1,5 @@
 <p align = "center">
-<img src = "Misc/RSA_logo.png"> <br>
+<img src = "Images/Logo.png"> <br>
 <a href="#steps">Steps</a> • <a href="#explanation">Explanation</a> • <a href="#viability">Viability</a> • <a href="#practical-implementation">Practical Implementation</a> • <a href="#lockencryption">Encryption</a> • <a href="#unlockdecryption">Decryption</a>  
 </p>
 

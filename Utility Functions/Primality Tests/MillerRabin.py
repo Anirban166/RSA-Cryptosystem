@@ -29,7 +29,7 @@ def power(x, y, p):
 # probably prime. d is an odd  
 # number such that d*2<sup>r</sup> = n-1 
 # for some r >= 1 
-def miillerTest(d, n): 
+def millerRabin(d, n): 
       
     # Pick a random number in [2..n-2] 
     # Corner cases make sure that n > 4 
@@ -65,7 +65,7 @@ def miillerTest(d, n):
 # input parameter that determines 
 # accuracy level. Higher value of  
 # k indicates more accuracy. 
-def isPrime( n, k): 
+def isPrime(n, k): 
       
     # Corner cases 
     if (n <= 1 or n == 4): 
@@ -89,9 +89,9 @@ def isPrime( n, k):
 # Driver Code 
 # Number of iterations 
 k = 4;  
-  
-print("All primes smaller than 100: "); 
-for n in range(1,100): 
+x = int(1e+2)
+print("All primes smaller than ", x,": "); 
+for n in range(1, x): 
     if (isPrime(n, k)): 
         print(n , end=" "); 
         
