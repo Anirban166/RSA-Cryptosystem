@@ -1,24 +1,20 @@
-A Suitable Textbook to go through basic Number Theory: (such as Euler's theorem, modular arithmetic etc.)
+1) A suitable textbook to go through basic Number Theory: (such as Euler's theorem, modular arithmetic etc.)
 Elemental Number Theory - David M. Burton
 
-For Algorithm lovers : (stumbled upon these chapters while following this book to learn Algorithms)
-Introduction to Algorithms - Thomas H. Coremen
-
-Noteworthy texts for Elliptic Curve Cryptography: (Extras)
-
-Elliptic Curves:
+2) Noteworthy textbooks for building the foundation required for Elliptic Curve Cryptography (ECC):
+2.a) Elliptic Curves:
 Undergraduate texts in Mathematics - Joseph H.Silverman and John T.Tate
 Drive link - https://drive.google.com/open?id=1ZCEDHLhm8_xT--55BP6zKLHRqeOZ3-0M
 
-ECs + Algebra:
+2.b) ECs + Algebra:
 Contemporary Abstract Algebra - Joseph A.Gallian
 Drive link - https://drive.google.com/open?id=1JuN5hO0B_r60GU9aFPe5pn2rlHb9EmX5
 
-ECs + Cryptography:
+2.c) ECs + Cryptography:
 Guide to Elliptic Curve Cryptography - Darrel Hankerson
 Drive link - https://drive.google.com/open?id=1agXKBKGsoh4ysAbE-zJ3Sv-OVE7Aq6oY  
 
 Drive Link to the folder containing the above titles:
 https://drive.google.com/folderview?id=1LnkeuKg07sGB9pCKT581SdgWWs0BmIBP
 
-Note: Sources are provided for educational purposes, however please purchase a hardcopy/ebook if possible!
+Note: The sources above are provided for educational purposes only; please purchase a hardcopy/ebook if possible!
