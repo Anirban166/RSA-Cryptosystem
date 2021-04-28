@@ -5,13 +5,13 @@
 using l = long long int;
 #define S 100
 
-// Variables are passed globally.
+// Globally passed variables:
 l p, q,      // primes
-  n,         // n = pq
-  t,         // toutient
-  flag,      // 1/0
-  e[S],    // public exponent e
-  d[S],    // private exponent d
+  n,        // n = pq
+  t,       // toutient
+  flag,   // 1/0
+  e[S],  // public exponent e
+  d[S], // private exponent d
   temp[S], m[S], en[S];
 
 char msg[S];
@@ -85,7 +85,7 @@ void encrypt()
 		i++;
 	}
 	en[i] = -1;
-	std::cout << "Encrypted message :\n";
+	std::cout << "Encrypted message:\n";
 	for (i = 0; en[i] != -1; i++)
 		printf("%c", en[i]);
 }
@@ -108,7 +108,7 @@ void decrypt()
 		i++;
 	}
 	m[i] = -1;
-	std::cout << "Decrypted message :\n";
+	std::cout << "Decrypted message:\n";
 	for (int i = 0; m[i] != -1; i++)
 		printf("%c", m[i]);
 }
@@ -117,20 +117,20 @@ int main()
 {   
     do 
     {
-	   std::cout << "Enter two primes (p,q for Euler's totient to be taken as (p-1)(q-1)) :\n";
+	   std::cout << "Enter two primes (p,q for Euler's totient to be taken as (p-1)(q-1)):\n";
 	   std::cin >> p >> q;
 	   if(primecheck(p) && primecheck(q)) break;
-	   else std::cout << "Wrong input; enter again (-_-)\n";
+	   else std::cout << "Wrong input; Please enter prime numbers.\n";
     } while(1);    
 
-	std::cout << "Enter message for encryption :\n";
+	std::cout << "Enter message for encryption:\n";
 	fflush(stdin);
 	std::cin >> msg;
 	for (int i = 0; msg[i] != '\0'; i++)
 		m[i] = msg[i];
 		
 	n = p * q;
-	t = (p - 1) * (q - 1); // Calcualting Euler's totient.
+	t = (p - 1) * (q - 1);
 	ce();
 	encrypt();
 	decrypt();

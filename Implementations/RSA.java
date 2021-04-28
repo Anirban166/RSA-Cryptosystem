@@ -1,78 +1,72 @@
-/*
-import java.io.UnsupportedEncodingException;
+import java.util.Random;
 import java.math.BigInteger;
-import java.security.InvalidKeyException;
-import java.security.KeyFactory;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.PKCS8EncodedKeySpec;
-import java.util.Arrays;
-*/ //Required frameworks if using Standard library package methods.
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import java.math.BigInteger;
-import java.security.SecureRandom;    
-
-public class RSA {
-   private final static BigInteger one      = new BigInteger("1");
-   private final static SecureRandom random = new SecureRandom();
-
-   private BigInteger privateKey;
-   private BigInteger publicKey;
-   private BigInteger modulus;
-
-   // generate an N-bit (roughly) public and private key
-   RSA(int N) {
-      BigInteger p = BigInteger.probablePrime(N/2, random);
-      BigInteger q = BigInteger.probablePrime(N/2, random);
-      BigInteger phi = (p.subtract(one)).multiply(q.subtract(one));
-
-      modulus    = p.multiply(q);                                  
-      publicKey  = new BigInteger("65537");     // common value in practice = 2^16 + 1
-      privateKey = publicKey.modInverse(phi);
-   }
-
-
-   BigInteger encrypt(BigInteger message) {
-      return message.modPow(publicKey, modulus);
-   }
-
-   BigInteger decrypt(BigInteger encrypted) {
-      return encrypted.modPow(privateKey, modulus);
-   }
-
-   public String toString() {
-      String s = "";
-      s += "public  = " + publicKey  + "\n";
-      s += "private = " + privateKey + "\n";
-      s += "modulus = " + modulus;
-      return s;
-   }
+import java.io.IOException;
+import java.io.DataInputStream;
  
-   public static void main(String[] args) {
-      int N = Integer.parseInt(args[0]);
-      RSA key = new RSA(N);
-      StdOut.println(key);
+public class RSA
+{
+    private BigInteger p, q, n, phi, e, d;
+    private int maxLength = 1024;
+    private Random r;
  
-      // create random message, encrypt and decrypt
-      BigInteger message = new BigInteger(N-1, random);
-
-      //// create message by converting string to integer
-      // String s = "test";
-      // byte[] bytes = s.getBytes();
-      // BigInteger message = new BigInteger(bytes);
-
-      BigInteger encrypt = key.encrypt(message);
-      BigInteger decrypt = key.decrypt(encrypt);
-      StdOut.println("message   = " + message);
-      StdOut.println("encrypted = " + encrypt);
-      StdOut.println("decrypted = " + decrypt);
-   }
+    public RSA()
+    {
+        r = new Random();
+        p = BigInteger.probablePrime(maxLength, r);
+        q = BigInteger.probablePrime(maxLength, r);
+        n = p.multiply(q);
+        phi = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));
+        e = BigInteger.probablePrime(maxLength / 2, r);
+        while (phi.gcd(e).compareTo(BigInteger.ONE) > 0 && e.compareTo(phi) < 0)
+        {
+            e.add(BigInteger.ONE);
+        }
+        d = e.modInverse(phi);
+    }
+ 
+    public RSA(BigInteger e, BigInteger d, BigInteger n)
+    {
+        this.e = e;
+        this.d = d;
+        this.n = n;
+    }
+ 
+    public static void main (String [] arguments) throws IOException
+    {
+        RSA rsa = new RSA();
+        DataInputStream input = new DataInputStream(System.in);
+        String inputString;
+        System.out.println("Enter message for encryption:");
+        inputString = input.readLine();
+        System.out.println("Encrypted message: " + inputString);
+        System.out.println("Encrypted message in bytes: " + bToS(inputString.getBytes()));
+        // Encrypting plaintext:
+        byte[] cipher = rsa.encryptMessage(inputString.getBytes());
+        // Decrypting ciphertext:
+        byte[] plain = rsa.decryptMessage(cipher);
+        System.out.println("Decrypted message in bytes: " + bToS(plain));
+        System.out.println("Decrypted message: " + new String(plain));
+    }
+ 
+    private static String bToS(byte[] cipher)
+    {
+        String temp = "";
+        for (byte b : cipher)
+        {
+            temp += Byte.toString(b);
+        }
+        return temp;
+    }
+ 
+    // Encryption function:
+    public byte[] encryptMessage(byte[] message)
+    {
+        return (new BigInteger(message)).modPow(e, N).toByteArray();
+    }
+ 
+    // Decryption function:
+    public byte[] decryptMessage(byte[] message)
+    {
+        return (new BigInteger(message)).modPow(d, N).toByteArray();
+    }
 }
