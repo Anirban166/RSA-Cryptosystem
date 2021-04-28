@@ -31,7 +31,7 @@ long long modulo(long long base, long long exponent, long long mod)
     return x % mod;
 }
 
-int Miller(long long p,int iteration)
+int Miller(long long p,int iterations)
 {
     int i;
     long long s;
@@ -48,7 +48,7 @@ int Miller(long long p,int iteration)
         {
             s /= 2;
         }
-    for (i = 0; i < iteration; i++)
+    for (i = 0; i < iterations; i++)
         {
             long long a = rand() % (p - 1) + 1, temp = s;
             long long mod = modulo(a, temp, p);
@@ -67,11 +67,13 @@ int Miller(long long p,int iteration)
 
 int main()
 {
-    int iteration = 5;
+    int iterations;
     long long num;
-    printf("Enter integer to test primality: ");
+    printf("Enter the number of iterations: ");
+    scanf("%d", &iterations);
+    printf("Enter an integer for primality testing: ");
     scanf("%lld", &num);
-    if ( Miller( num, iteration))
+    if (Miller(num, iterations))
         printf("\n%lld is prime\n", num);
     else
         printf("\n%lld is not prime\n", num);

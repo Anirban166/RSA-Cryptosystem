@@ -57,9 +57,13 @@ This can only be solved by factorizing n (since every number is essentially a pr
 Practical Implementation
 -------
 
-The written code works well for small primes but considering a deeper level of security, the preferable length for the 2 primes considered (p and q) should be preferably around 2<sup>11</sup> bits (2048), which result in values (n) greater than 2<sup>12</sup> (4096) bits upon their multiplication (p*q). This ensures a tight encryption which is seemingly impossible to decrypt (although completely possible to breach every combination if we were to leverage the power of supercomputers) given massive computing resources with even a large span of time allotted.
+Implementations in a few languages can be found in this [directory](https://github.com/Anirban166/RSA-Cryptosystem/tree/master/Implementations). [Rosetta Code](https://rosettacode.org/wiki/RSA_code) is another source for implementations in multiple languages.  
 
-Hence RSA is quite feasible in general, apart from its downsides like being much slower than symmetric cryptosystems. <br>
+These are for the sole purpose of educating oneself via reference, and must not be used in codebases where the implementations are critical. Given that there are multiple factors to be considered in modern-day cryptographic routines in order to establish a deeper level of security, its best to create specific implementations than to use/derive the generalized ones.
+
+For general use, the length for the 2 primes considered (p and q) should be preferably around 2<sup>11</sup> bits (2048), which result in values (n) greater than 2<sup>12</sup> (4096) bits upon their multiplication (p*q). This ensures a tight encryption which is seemingly impossible to decrypt even when provided with massive computing resources (although completely possible to breach/bruteforce every combination if we were to leverage the power of supercomputers) for a large span of time. 
+
+Hence, the RSA algorithm is quite feasible in general, apart from it primary downside of being much slower than symmetric cryptosystems. <br>
 There are better alternatives (faster and more secure encryption schemes) such as elliptic curve cryptosystems, but then again - Quantum computing could overcome that as well. Eventually nothing seems that secure, or has a counter-measure in the long run. 
 
 -------

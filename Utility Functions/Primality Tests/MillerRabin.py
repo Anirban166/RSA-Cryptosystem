@@ -1,18 +1,16 @@
 import random  
   
-# Utility function to do modular exponentiation. It returns (x^y) % p (note to self)
+# Utility function to do modular exponentiation. (returns (x^y) % p)
 def power(x, y, p): 
       
     # Initialize result 
     res = 1;  
       
-    # Update x if it is more than or 
-    # equal to p 
+    # Update x if it is more than or equal to p 
     x = x % p;  
     while (y > 0): 
           
-        # If y is odd, multiply 
-        # x with result 
+        # If y is odd, multiply x with result 
         if (y & 1): 
             res = (res * x) % p; 
   
@@ -22,17 +20,11 @@ def power(x, y, p):
       
     return res; 
   
-# This function is called 
-# for all k trials. It returns 
-# false if n is composite and  
-# returns false if n is 
-# probably prime. d is an odd  
-# number such that d*2<sup>r</sup> = n-1 
-# for some r >= 1 
+# This function is called for all k trials. It returns false if n is composite and/or probably prime. 
+# d is an odd number such that d*2<sup>r</sup> = n-1 for some r >= 1. 
 def millerRabin(d, n): 
       
-    # Pick a random number in [2..n-2] 
-    # Corner cases make sure that n > 4 
+    # Pick a random number in [2..n-2]; n > 4 
     a = 2 + random.randint(1, n - 4); 
   
     # Compute a^d % n  
@@ -41,9 +33,7 @@ def millerRabin(d, n):
     if (x == 1 or x == n - 1): 
         return True; 
   
-    # Keep squaring x while one  
-    # of the following doesn't  
-    # happen 
+    # Keep squaring x while one of the following doesn't happen: 
     # (i) d does not reach n-1 
     # (ii) (x^2) % n is not 1 
     # (iii) (x^2) % n is not n-1 
@@ -59,12 +49,8 @@ def millerRabin(d, n):
     # Return composite 
     return False; 
   
-# It returns false if n is  
-# composite and returns true if n 
-# is probably prime. k is an  
-# input parameter that determines 
-# accuracy level. Higher value of  
-# k indicates more accuracy. 
+# It returns false if n is composite and returns true if n is probably prime. 
+# k is an input parameter that determines the accuracy level. Higher value of k indicates more accuracy. 
 def isPrime(n, k): 
       
     # Corner cases 
@@ -73,13 +59,12 @@ def isPrime(n, k):
     if (n <= 3): 
         return True; 
   
-    # Find r such that n =  
-    # 2^d * r + 1 for some r >= 1 
+    # Find r such that n = 2^d * r + 1 for some r >= 1 
     d = n - 1; 
     while (d % 2 == 0): 
         d //= 2; 
   
-    # Iterate given nber of 'k' times 
+    # Iterate 'k' times 
     for i in range(k): 
         if (miillerTest(d, n) == False): 
             return False; 
@@ -87,11 +72,9 @@ def isPrime(n, k):
     return True; 
   
 # Driver Code 
-# Number of iterations 
 k = 4;  
 x = int(1e+2)
 print("All primes smaller than ", x,": "); 
 for n in range(1, x): 
     if (isPrime(n, k)): 
         print(n , end=" "); 
-        

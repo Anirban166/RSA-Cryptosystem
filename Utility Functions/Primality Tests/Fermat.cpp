@@ -45,5 +45,6 @@ bool Primecheck (unsigned int n, int k)
   
     return true; 
 } 
-/* If selected number (say ‘n’) is prime, then function always returns true, else if n is composite than returns false with high probability. Higher value of k increases probability of correct result. 
+/* If selected number (say ‘n’) is prime, then function always returns true, else if n is composite than it returns false. 
+   Higher value of k increases probability of correct result. 
 In practical cases, Fermat’s test and multiple rounds of Miller-Rabin are used as primality tests for implementing RSA */
