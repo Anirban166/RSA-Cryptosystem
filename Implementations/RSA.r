@@ -31,5 +31,3 @@ d <- private_key$data$d
 decrypted.message <- bignum_mod_exp(cipher.text, d, n)
 # Again, we need to convert the result into characters to obtain the string we sent as a message:
 rawToChar(decrypted.message) # prints out the message
-
-

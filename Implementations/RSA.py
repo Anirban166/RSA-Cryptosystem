@@ -6,12 +6,12 @@ try:
    chr = unichr
 except NameError:
    pass
-p=int(input('Enter prime p: '))
-q=int(input('Enter prime q: '))
-print("Choosen primes:\np=" + str(p) + ", q=" + str(q) + "\n")
-n=p*q
+p = int(input('Enter prime p: '))
+q = int(input('Enter prime q: '))
+print("Choosen primes:\np = " + str(p) + ", q = " + str(q) + "\n")
+n = p * q
 print("n = p * q = " + str(n) + "\n")
-phi=(p-1)*(q-1)
+phi = (p - 1) * (q - 1)
 print("Euler's function (totient) [phi(n)]: " + str(phi) + "\n")
 def gcd(a, b):
     while b != 0:
@@ -27,18 +27,18 @@ def modinv(a, m):
 def coprimes(a):
     l = []
     for x in range(2, a):
-        if gcd(a, x) == 1 and modinv(x,phi) != None:
+        if gcd(a, x) == 1 and modinv(x, phi) != None:
             l.append(x)
     for x in l:
-        if x == modinv(x,phi):
+        if x == modinv(x, phi):
             l.remove(x)
     return l
 print("Choose an e from a coprime(s) array below:\n")
 print(str(coprimes(phi)) + "\n")
-e=int(input())
-d=modinv(e,phi)
-print("\nYour public key is a pair of numbers (e=" + str(e) + ", n=" + str(n) + ").\n")
-print("Your private key is a pair of numbers (d=" + str(d) + ", n=" + str(n) + ").\n")
+e = int(input())
+d = modinv(e, phi)
+print("\nYour public key is a pair of numbers (e = " + str(e) + ", n = " + str(n) + ").\n")
+print("Your private key is a pair of numbers (d = " + str(d) + ", n = " + str(n) + ").\n")
 def encrypt_block(m):
     c = modinv(m**e, n)
     if c == None: print('No modular multiplicative inverse for block ' + str(m) + '.')
