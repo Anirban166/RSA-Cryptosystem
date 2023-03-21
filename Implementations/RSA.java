@@ -61,12 +61,12 @@ public class RSA
     // Encryption function:
     public byte[] encryptMessage(byte[] message)
     {
-        return (new BigInteger(message)).modPow(e, N).toByteArray();
+        return (new BigInteger(message)).modPow(e, n).toByteArray();
     }
  
     // Decryption function:
     public byte[] decryptMessage(byte[] message)
     {
-        return (new BigInteger(message)).modPow(d, N).toByteArray();
+        return (new BigInteger(message)).modPow(d, n).toByteArray();
     }
 }
